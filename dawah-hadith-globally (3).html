@@ -1,0 +1,1381 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Da'wah Hadith Globally – Sheikh Hamza Al Hassan</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Cinzel+Decorative:wght@700;900&family=Lato:wght@300;400;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+:root {
+  --gold: #c9a84c;
+  --gold-light: #f0d080;
+  --gold-dark: #8a6d1f;
+  --emerald: #1a6b4a;
+  --emerald-dark: #0e4230;
+  --emerald-light: #2a9b6a;
+  --cream: #fdf6e3;
+  --dark: #0d1f17;
+  --dark2: #162a1e;
+  --text: #2c1f0e;
+  --text-light: #6b5b3e;
+  --white: #ffffff;
+  --shadow: 0 8px 40px rgba(0,0,0,0.18);
+  --radius: 16px;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text); overflow-x: hidden; }
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar { width: 7px; }
+::-webkit-scrollbar-track { background: var(--dark); }
+::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 10px; }
+
+/* ===== LOADER ===== */
+#loader { position: fixed; inset: 0; background: var(--dark); z-index: 99999; display: flex; flex-direction: column; align-items: center; justify-content: center; transition: opacity 0.6s; }
+#loader .loader-arabic { font-family: 'Scheherazade New', serif; font-size: 2.5rem; color: var(--gold); margin-bottom: 16px; animation: pulse 1.5s infinite; }
+#loader .loader-bar { width: 200px; height: 3px; background: rgba(255,255,255,0.1); border-radius: 10px; overflow: hidden; }
+#loader .loader-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-light)); border-radius: 10px; animation: load 2s ease forwards; }
+@keyframes load { from { width: 0; } to { width: 100%; } }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.4;} }
+
+/* ===== TOP BAR ===== */
+.top-bar { background: var(--dark); color: rgba(255,255,255,0.7); font-size: 0.78rem; padding: 7px 0; }
+.top-bar .tb-inner { max-width: 1200px; margin: auto; padding: 0 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 6px; }
+.top-bar a { color: var(--gold); text-decoration: none; transition: color 0.2s; }
+.top-bar a:hover { color: var(--gold-light); }
+.top-bar .tb-contact span { margin-right: 18px; }
+
+/* ===== NAVBAR ===== */
+nav { position: sticky; top: 0; z-index: 1000; background: var(--dark); border-bottom: 2px solid var(--gold-dark); box-shadow: 0 4px 30px rgba(0,0,0,0.4); }
+.nav-inner { max-width: 1300px; margin: auto; padding: 0 20px; display: flex; align-items: center; justify-content: space-between; height: 70px; }
+.logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.logo-icon { width: 48px; height: 48px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: var(--dark); font-family: 'Scheherazade New', serif; box-shadow: 0 0 20px rgba(201,168,76,0.4); }
+.logo-text { display: flex; flex-direction: column; }
+.logo-text span:first-child { font-family: 'Cinzel Decorative', serif; font-size: 1rem; color: var(--gold); font-weight: 700; letter-spacing: 1px; }
+.logo-text span:last-child { font-size: 0.7rem; color: rgba(255,255,255,0.55); letter-spacing: 2px; text-transform: uppercase; }
+.nav-links { display: flex; align-items: center; gap: 4px; list-style: none; }
+.nav-links a { color: rgba(255,255,255,0.85); text-decoration: none; padding: 8px 14px; border-radius: 8px; font-size: 0.88rem; font-weight: 600; transition: all 0.2s; letter-spacing: 0.3px; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); background: rgba(201,168,76,0.12); }
+.nav-links .dropdown { position: relative; }
+.nav-links .dropdown .drop-menu { position: absolute; top: 110%; left: 0; min-width: 200px; background: var(--dark2); border: 1px solid var(--gold-dark); border-radius: 10px; box-shadow: var(--shadow); opacity: 0; visibility: hidden; transform: translateY(10px); transition: all 0.25s; z-index: 200; }
+.nav-links .dropdown:hover .drop-menu { opacity: 1; visibility: visible; transform: translateY(0); }
+.drop-menu li { list-style: none; }
+.drop-menu a { display: block; padding: 10px 18px; border-radius: 0; font-size: 0.85rem; }
+.drop-menu li:first-child a { border-radius: 10px 10px 0 0; }
+.drop-menu li:last-child a { border-radius: 0 0 10px 10px; }
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+.btn { display: inline-flex; align-items: center; gap: 7px; padding: 9px 20px; border-radius: 8px; font-size: 0.85rem; font-weight: 700; border: none; cursor: pointer; text-decoration: none; transition: all 0.25s; letter-spacing: 0.3px; }
+.btn-gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); }
+.btn-gold:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(201,168,76,0.45); }
+.btn-outline { background: transparent; border: 1.5px solid var(--gold); color: var(--gold); }
+.btn-outline:hover { background: var(--gold); color: var(--dark); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; flex-direction: column; gap: 5px; padding: 5px; }
+.hamburger span { display: block; width: 25px; height: 2px; background: var(--gold); border-radius: 2px; transition: all 0.3s; }
+.mobile-nav { display: none; position: fixed; inset: 0; background: rgba(13,31,23,0.98); z-index: 999; flex-direction: column; align-items: center; justify-content: center; gap: 20px; }
+.mobile-nav.open { display: flex; }
+.mobile-nav a { color: var(--gold); font-size: 1.3rem; text-decoration: none; font-family: 'Cinzel Decorative', serif; }
+.mobile-close { position: absolute; top: 20px; right: 20px; background: none; border: none; color: var(--gold); font-size: 2rem; cursor: pointer; }
+
+/* ===== HERO ===== */
+.hero { min-height: 94vh; background: linear-gradient(160deg, var(--dark) 0%, var(--dark2) 40%, var(--emerald-dark) 100%); position: relative; display: flex; align-items: center; overflow: hidden; }
+.hero-bg { position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 5 L55 20 L55 40 L30 55 L5 40 L5 20 Z' fill='none' stroke='rgba(201,168,76,0.06)' stroke-width='1'/%3E%3C/svg%3E"); }
+.hero-glow { position: absolute; width: 700px; height: 700px; background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%); top: -100px; right: -100px; border-radius: 50%; }
+.hero-glow2 { position: absolute; width: 400px; height: 400px; background: radial-gradient(circle, rgba(26,107,74,0.25) 0%, transparent 70%); bottom: -50px; left: -50px; border-radius: 50%; }
+.hero-inner { max-width: 1200px; margin: auto; padding: 80px 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; position: relative; z-index: 1; }
+.hero-content { }
+.hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(201,168,76,0.12); border: 1px solid rgba(201,168,76,0.3); color: var(--gold); padding: 6px 16px; border-radius: 30px; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 24px; }
+.hero-arabic { font-family: 'Scheherazade New', serif; font-size: 2.5rem; color: var(--gold-light); line-height: 1.6; margin-bottom: 10px; direction: rtl; text-align: right; }
+.hero-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(2rem, 4vw, 3.2rem); color: var(--white); line-height: 1.2; margin-bottom: 8px; }
+.hero-title span { color: var(--gold); }
+.hero-subtitle { font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 30px; line-height: 1.8; max-width: 480px; }
+.hero-sheikh { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.2); padding: 14px 20px; border-radius: 12px; }
+.sheikh-avatar { width: 56px; height: 56px; background: linear-gradient(135deg, var(--gold), var(--emerald)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.6rem; color: white; flex-shrink: 0; }
+.sheikh-info h4 { color: var(--gold); font-size: 1rem; font-weight: 700; }
+.sheikh-info p { color: rgba(255,255,255,0.55); font-size: 0.8rem; }
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-visual { display: flex; flex-direction: column; align-items: center; gap: 20px; }
+.hero-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: var(--radius); padding: 24px; width: 100%; backdrop-filter: blur(10px); }
+.hero-card h3 { font-family: 'Amiri', serif; color: var(--gold); font-size: 1.3rem; margin-bottom: 12px; }
+.hadith-text { font-family: 'Amiri', serif; font-size: 1.1rem; color: rgba(255,255,255,0.85); direction: rtl; text-align: right; line-height: 2; margin-bottom: 10px; }
+.hadith-ref { font-size: 0.78rem; color: var(--gold-dark); font-style: italic; }
+.stats-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; width: 100%; }
+.stat-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(201,168,76,0.15); border-radius: 12px; padding: 16px; text-align: center; }
+.stat-num { font-family: 'Cinzel Decorative', serif; font-size: 1.5rem; color: var(--gold); display: block; }
+.stat-lbl { font-size: 0.7rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; }
+
+/* ===== TICKER ===== */
+.ticker { background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-dark)); padding: 10px 0; overflow: hidden; }
+.ticker-inner { display: flex; animation: ticker 30s linear infinite; white-space: nowrap; }
+.ticker-item { color: var(--dark); font-weight: 700; font-size: 0.85rem; padding: 0 40px; font-family: 'Amiri', serif; font-size: 1rem; }
+@keyframes ticker { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+
+/* ===== SECTION STYLES ===== */
+section { padding: 80px 0; }
+.section-inner { max-width: 1200px; margin: auto; padding: 0 20px; }
+.section-header { text-align: center; margin-bottom: 56px; }
+.section-tag { display: inline-block; background: rgba(201,168,76,0.1); color: var(--gold); border: 1px solid rgba(201,168,76,0.3); padding: 4px 16px; border-radius: 30px; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+.section-title { font-family: 'Cinzel Decorative', serif; font-size: clamp(1.5rem, 3vw, 2.4rem); color: var(--dark); margin-bottom: 12px; }
+.section-title span { color: var(--emerald); }
+.section-sub { color: var(--text-light); font-size: 1rem; max-width: 600px; margin: 0 auto; line-height: 1.8; }
+.section-dark .section-title { color: var(--white); }
+.section-dark .section-sub { color: rgba(255,255,255,0.6); }
+.section-dark .section-tag { background: rgba(201,168,76,0.15); }
+
+/* ===== ABOUT ===== */
+.about { background: var(--white); }
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.about-image-box { position: relative; }
+.about-img-placeholder { width: 100%; aspect-ratio: 4/5; background: linear-gradient(145deg, var(--dark), var(--dark2), var(--emerald-dark)); border-radius: 20px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; border: 2px solid var(--gold-dark); position: relative; overflow: hidden; }
+.about-img-placeholder::before { content: ''; position: absolute; inset: 0; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40'%3E%3Cpath d='M0 20 L20 0 L40 20 L20 40 Z' fill='none' stroke='rgba(201,168,76,0.07)' stroke-width='1'/%3E%3C/svg%3E"); }
+.sheikh-big-icon { font-size: 5rem; color: var(--gold); }
+.sheikh-name-arabic { font-family: 'Scheherazade New', serif; font-size: 2.5rem; color: var(--gold-light); }
+.about-badge { position: absolute; bottom: -20px; right: -20px; background: var(--gold); color: var(--dark); padding: 16px 22px; border-radius: 12px; font-weight: 700; text-align: center; box-shadow: var(--shadow); }
+.about-badge span { display: block; font-size: 1.6rem; font-family: 'Cinzel Decorative', serif; }
+.about-content h2 { font-family: 'Cinzel Decorative', serif; font-size: 2rem; color: var(--dark); margin-bottom: 16px; }
+.about-content h2 span { color: var(--emerald); }
+.about-content p { color: var(--text-light); line-height: 1.9; margin-bottom: 16px; }
+.about-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin: 24px 0; }
+.info-item { display: flex; align-items: flex-start; gap: 12px; background: var(--cream); padding: 14px; border-radius: 10px; border-left: 3px solid var(--gold); }
+.info-item i { color: var(--gold); margin-top: 3px; width: 16px; }
+.info-item div strong { display: block; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 1px; color: var(--text-light); }
+.info-item div span { font-size: 0.9rem; color: var(--text); font-weight: 600; }
+.social-links { display: flex; gap: 10px; flex-wrap: wrap; }
+.social-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 8px; text-decoration: none; font-size: 0.82rem; font-weight: 700; transition: all 0.25s; border: 1.5px solid transparent; }
+.social-btn.bkash { background: rgba(231,0,116,0.1); color: #e70074; border-color: rgba(231,0,116,0.3); }
+.social-btn.whatsapp { background: rgba(37,211,102,0.1); color: #25d366; border-color: rgba(37,211,102,0.3); }
+.social-btn.email { background: rgba(26,107,74,0.1); color: var(--emerald); border-color: rgba(26,107,74,0.3); }
+.social-btn:hover { transform: translateY(-2px); opacity: 0.85; }
+
+/* ===== BLOG ===== */
+.blog { background: var(--cream); }
+.blog-filter { display: flex; gap: 8px; justify-content: center; margin-bottom: 40px; flex-wrap: wrap; }
+.filter-btn { padding: 8px 20px; border-radius: 30px; border: 1.5px solid var(--emerald); background: transparent; color: var(--emerald); cursor: pointer; font-size: 0.83rem; font-weight: 700; transition: all 0.2s; }
+.filter-btn.active, .filter-btn:hover { background: var(--emerald); color: white; }
+.blog-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(330px, 1fr)); gap: 28px; }
+.blog-card { background: white; border-radius: var(--radius); overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.07); transition: all 0.3s; border: 1px solid rgba(0,0,0,0.06); cursor: pointer; }
+.blog-card:hover { transform: translateY(-6px); box-shadow: 0 16px 40px rgba(0,0,0,0.12); }
+.blog-thumb { height: 200px; background: linear-gradient(135deg, var(--dark), var(--emerald-dark)); display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+.blog-thumb::after { content: ''; position: absolute; inset: 0; background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.5)); }
+.blog-thumb-icon { font-size: 3rem; color: rgba(255,255,255,0.2); }
+.blog-cat { position: absolute; top: 14px; left: 14px; background: var(--gold); color: var(--dark); padding: 4px 12px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; z-index: 1; text-transform: uppercase; }
+.blog-body { padding: 22px; }
+.blog-meta { display: flex; gap: 14px; font-size: 0.75rem; color: var(--text-light); margin-bottom: 10px; }
+.blog-meta i { color: var(--gold); margin-right: 4px; }
+.blog-title { font-family: 'Amiri', serif; font-size: 1.2rem; color: var(--dark); margin-bottom: 10px; line-height: 1.5; font-weight: 700; }
+.blog-excerpt { font-size: 0.85rem; color: var(--text-light); line-height: 1.7; margin-bottom: 16px; }
+.blog-footer { display: flex; justify-content: space-between; align-items: center; }
+.read-more { color: var(--emerald); font-size: 0.82rem; font-weight: 700; text-decoration: none; display: flex; align-items: center; gap: 6px; transition: gap 0.2s; }
+.read-more:hover { gap: 10px; }
+.blog-likes { color: var(--text-light); font-size: 0.78rem; display: flex; align-items: center; gap: 5px; cursor: pointer; transition: color 0.2s; }
+.blog-likes:hover { color: #e74c3c; }
+
+/* ===== HADITHS ===== */
+.hadiths { background: linear-gradient(160deg, var(--dark) 0%, var(--dark2) 100%); }
+.hadith-cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 24px; }
+.hadith-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(201,168,76,0.2); border-radius: var(--radius); padding: 28px; transition: all 0.3s; }
+.hadith-card:hover { border-color: var(--gold); background: rgba(201,168,76,0.06); transform: translateY(-4px); }
+.hadith-num { font-family: 'Cinzel Decorative', serif; font-size: 0.75rem; color: var(--gold); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; display: flex; align-items: center; gap: 8px; }
+.hadith-num::after { content: ''; flex: 1; height: 1px; background: rgba(201,168,76,0.2); }
+.hadith-arabic-text { font-family: 'Scheherazade New', serif; font-size: 1.35rem; color: rgba(255,255,255,0.9); direction: rtl; text-align: right; line-height: 2.2; margin-bottom: 16px; }
+.hadith-translation { font-size: 0.88rem; color: rgba(255,255,255,0.65); line-height: 1.8; margin-bottom: 14px; font-style: italic; }
+.hadith-source { display: flex; align-items: center; gap: 8px; font-size: 0.78rem; color: var(--gold); font-weight: 700; }
+.hadith-share { margin-left: auto; color: rgba(255,255,255,0.3); cursor: pointer; transition: color 0.2s; }
+.hadith-share:hover { color: var(--gold); }
+
+/* ===== DONATE ===== */
+.donate { background: var(--white); }
+.donate-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.donate-content h2 { font-family: 'Cinzel Decorative', serif; font-size: 2rem; color: var(--dark); margin-bottom: 14px; }
+.donate-content h2 span { color: var(--gold-dark); }
+.donate-content p { color: var(--text-light); line-height: 1.9; margin-bottom: 20px; }
+.donate-methods { display: flex; flex-direction: column; gap: 14px; }
+.donate-method { display: flex; align-items: center; gap: 16px; padding: 18px; border-radius: 12px; border: 1.5px solid; transition: all 0.25s; cursor: pointer; }
+.donate-method:hover { transform: translateX(6px); }
+.dm-bkash { border-color: rgba(231,0,116,0.3); background: rgba(231,0,116,0.05); }
+.dm-bkash:hover { border-color: #e70074; }
+.dm-icon { width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; flex-shrink: 0; }
+.dm-bkash .dm-icon { background: rgba(231,0,116,0.15); color: #e70074; }
+.dm-info strong { display: block; font-size: 1rem; color: var(--text); }
+.dm-info span { font-size: 0.85rem; color: var(--text-light); }
+.donate-amounts { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-bottom: 20px; }
+.amount-btn { padding: 12px; border: 1.5px solid var(--emerald); border-radius: 10px; background: transparent; color: var(--emerald); font-size: 0.9rem; font-weight: 700; cursor: pointer; transition: all 0.2s; }
+.amount-btn:hover, .amount-btn.selected { background: var(--emerald); color: white; }
+.donate-form input { width: 100%; padding: 14px 18px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 10px; font-size: 0.95rem; color: var(--text); background: var(--cream); margin-bottom: 14px; font-family: 'Lato', sans-serif; }
+.donate-form input:focus { outline: none; border-color: var(--emerald); }
+.btn-donate { width: 100%; padding: 14px; background: linear-gradient(135deg, var(--emerald), var(--emerald-light)); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.25s; letter-spacing: 0.5px; }
+.btn-donate:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,74,0.35); }
+
+/* ===== CONTACT ===== */
+.contact { background: var(--cream); }
+.contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+.contact-info h3 { font-family: 'Cinzel Decorative', serif; font-size: 1.6rem; color: var(--dark); margin-bottom: 20px; }
+.contact-item { display: flex; align-items: flex-start; gap: 14px; padding: 18px; background: white; border-radius: 12px; margin-bottom: 14px; border-left: 3px solid var(--gold); box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+.contact-item i { color: var(--gold); font-size: 1.1rem; margin-top: 2px; }
+.contact-item strong { display: block; color: var(--text); font-weight: 700; margin-bottom: 2px; }
+.contact-item span { color: var(--text-light); font-size: 0.88rem; }
+.contact-item a { color: var(--emerald); text-decoration: none; font-weight: 600; }
+.contact-form { background: white; padding: 36px; border-radius: var(--radius); box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+.contact-form h3 { font-family: 'Cinzel Decorative', serif; font-size: 1.4rem; color: var(--dark); margin-bottom: 22px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.form-group { margin-bottom: 14px; }
+.form-group label { display: block; font-size: 0.8rem; font-weight: 700; color: var(--text-light); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 1px; }
+.form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 0.9rem; color: var(--text); background: var(--cream); font-family: 'Lato', sans-serif; transition: border-color 0.2s; }
+.form-group input:focus, .form-group textarea:focus, .form-group select:focus { outline: none; border-color: var(--emerald); background: white; }
+.form-group textarea { height: 110px; resize: vertical; }
+.btn-submit { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.25s; }
+.btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(201,168,76,0.4); }
+
+/* ===== MODAL ===== */
+.modal-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.75); z-index: 5000; align-items: center; justify-content: center; padding: 20px; }
+.modal-overlay.open { display: flex; animation: fadeIn 0.2s; }
+@keyframes fadeIn { from{opacity:0} to{opacity:1} }
+.modal { background: var(--white); border-radius: 20px; max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; box-shadow: 0 30px 80px rgba(0,0,0,0.3); }
+.modal-header { padding: 28px 30px 0; display: flex; justify-content: space-between; align-items: flex-start; }
+.modal-header h2 { font-family: 'Amiri', serif; font-size: 1.6rem; color: var(--dark); flex: 1; padding-right: 20px; }
+.modal-close { background: none; border: none; font-size: 1.6rem; cursor: pointer; color: var(--text-light); padding: 5px; transition: color 0.2s; }
+.modal-close:hover { color: var(--text); }
+.modal-body { padding: 20px 30px 30px; }
+.modal-body .hadith-arabic-text { color: var(--text); font-size: 1.5rem; }
+.modal-body .hadith-translation { color: var(--text-light); font-style: normal; }
+.modal-body .blog-full { font-size: 0.92rem; color: var(--text-light); line-height: 1.9; }
+
+/* ===== ADMIN PANEL ===== */
+.admin-panel { display: none; position: fixed; inset: 0; z-index: 8000; background: #0f172a; overflow: auto; }
+.admin-panel.open { display: flex; }
+.admin-sidebar { width: 260px; background: #1e293b; min-height: 100vh; flex-shrink: 0; border-right: 1px solid rgba(255,255,255,0.06); display: flex; flex-direction: column; }
+.admin-logo { padding: 24px 20px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.admin-logo h2 { font-family: 'Cinzel Decorative', serif; font-size: 0.85rem; color: var(--gold); }
+.admin-logo p { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 4px; }
+.admin-nav { padding: 16px 0; flex: 1; }
+.admin-nav-item { display: flex; align-items: center; gap: 12px; padding: 12px 20px; color: rgba(255,255,255,0.55); cursor: pointer; transition: all 0.2s; font-size: 0.88rem; border-left: 3px solid transparent; }
+.admin-nav-item:hover, .admin-nav-item.active { color: var(--gold); background: rgba(201,168,76,0.08); border-left-color: var(--gold); }
+.admin-nav-item i { width: 18px; text-align: center; }
+.admin-main { flex: 1; display: flex; flex-direction: column; }
+.admin-topbar { padding: 16px 28px; background: #1e293b; border-bottom: 1px solid rgba(255,255,255,0.06); display: flex; align-items: center; justify-content: space-between; }
+.admin-topbar h1 { font-size: 1.1rem; color: white; font-weight: 700; }
+.admin-user { display: flex; align-items: center; gap: 10px; color: rgba(255,255,255,0.7); font-size: 0.85rem; cursor: pointer; }
+.admin-avatar { width: 36px; height: 36px; background: linear-gradient(135deg, var(--gold), var(--emerald)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; color: white; }
+.admin-content { flex: 1; padding: 28px; overflow-y: auto; }
+.admin-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+.astat { background: #1e293b; border-radius: 12px; padding: 20px; border: 1px solid rgba(255,255,255,0.06); }
+.astat .num { font-size: 2rem; font-weight: 800; color: var(--gold); display: block; }
+.astat .lbl { font-size: 0.78rem; color: rgba(255,255,255,0.45); text-transform: uppercase; letter-spacing: 1px; margin-top: 4px; display: block; }
+.astat .trend { font-size: 0.75rem; margin-top: 8px; }
+.astat .trend.up { color: #22c55e; }
+.astat .trend.down { color: #ef4444; }
+.admin-section { background: #1e293b; border-radius: 12px; padding: 22px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.06); }
+.admin-section h3 { color: white; font-size: 1rem; font-weight: 700; margin-bottom: 18px; display: flex; align-items: center; justify-content: space-between; }
+.admin-table { width: 100%; border-collapse: collapse; }
+.admin-table th { text-align: left; color: rgba(255,255,255,0.4); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1px; padding: 0 0 12px; }
+.admin-table td { padding: 12px 0; border-top: 1px solid rgba(255,255,255,0.05); color: rgba(255,255,255,0.75); font-size: 0.85rem; }
+.admin-table tr:first-child td { border-top: none; }
+.abadge { display: inline-block; padding: 3px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; }
+.abadge.published { background: rgba(34,197,94,0.15); color: #22c55e; }
+.abadge.draft { background: rgba(234,179,8,0.15); color: #eab308; }
+.abadge.pending { background: rgba(251,146,60,0.15); color: #fb923c; }
+.admin-btn { padding: 7px 14px; border-radius: 7px; border: none; cursor: pointer; font-size: 0.78rem; font-weight: 700; transition: all 0.2s; }
+.admin-btn.edit { background: rgba(59,130,246,0.15); color: #60a5fa; }
+.admin-btn.delete { background: rgba(239,68,68,0.15); color: #f87171; }
+.admin-btn.primary { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); }
+.admin-close-btn { position: absolute; top: 16px; right: 16px; background: rgba(255,255,255,0.1); border: none; color: white; width: 36px; height: 36px; border-radius: 50%; cursor: pointer; font-size: 1.1rem; transition: all 0.2s; }
+.admin-close-btn:hover { background: rgba(255,255,255,0.2); }
+
+/* ===== LOGIN MODAL ===== */
+.auth-modal { display: none; position: fixed; inset: 0; z-index: 9000; background: rgba(0,0,0,0.85); align-items: center; justify-content: center; padding: 20px; }
+.auth-modal.open { display: flex; animation: fadeIn 0.2s; }
+.auth-box { background: var(--white); border-radius: 20px; width: 100%; max-width: 420px; overflow: hidden; box-shadow: 0 30px 80px rgba(0,0,0,0.4); }
+.auth-header { background: linear-gradient(135deg, var(--dark), var(--dark2)); padding: 36px 32px 28px; text-align: center; }
+.auth-header .auth-logo { width: 64px; height: 64px; background: linear-gradient(135deg, var(--gold), var(--gold-dark)); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; color: var(--dark); margin: 0 auto 16px; }
+.auth-header h2 { font-family: 'Cinzel Decorative', serif; color: var(--white); font-size: 1.2rem; }
+.auth-header p { color: rgba(255,255,255,0.5); font-size: 0.8rem; margin-top: 6px; }
+.auth-tabs { display: flex; border-bottom: 1px solid rgba(0,0,0,0.08); }
+.auth-tab { flex: 1; padding: 14px; text-align: center; font-weight: 700; font-size: 0.85rem; cursor: pointer; color: var(--text-light); border-bottom: 3px solid transparent; transition: all 0.2s; }
+.auth-tab.active { color: var(--emerald); border-bottom-color: var(--emerald); }
+.auth-body { padding: 28px 32px; }
+.auth-form .form-group { margin-bottom: 16px; }
+.auth-form label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-light); margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.8px; }
+.auth-form input { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 0.9rem; color: var(--text); background: var(--cream); font-family: 'Lato', sans-serif; }
+.auth-form input:focus { outline: none; border-color: var(--emerald); }
+.auth-submit { width: 100%; padding: 13px; background: linear-gradient(135deg, var(--emerald), var(--emerald-light)); color: white; border: none; border-radius: 10px; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.25s; margin-top: 4px; }
+.auth-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(26,107,74,0.3); }
+.auth-close { width: 100%; padding: 10px; background: none; border: none; color: var(--text-light); cursor: pointer; font-size: 0.83rem; margin-top: 10px; transition: color 0.2s; }
+.auth-close:hover { color: var(--text); }
+.auth-role { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+.role-btn { padding: 10px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 8px; background: var(--cream); cursor: pointer; text-align: center; font-size: 0.82rem; font-weight: 600; color: var(--text-light); transition: all 0.2s; }
+.role-btn.active { border-color: var(--emerald); color: var(--emerald); background: rgba(26,107,74,0.06); }
+.forgot-link { display: block; text-align: right; font-size: 0.78rem; color: var(--emerald); text-decoration: none; margin-bottom: 14px; cursor: pointer; }
+
+/* ===== WRITE BLOG MODAL ===== */
+.write-modal { display: none; position: fixed; inset: 0; z-index: 7000; background: rgba(0,0,0,0.75); align-items: center; justify-content: center; padding: 20px; }
+.write-modal.open { display: flex; }
+.write-box { background: white; border-radius: 20px; max-width: 750px; width: 100%; max-height: 90vh; overflow-y: auto; }
+.write-header { padding: 24px 28px; border-bottom: 1px solid rgba(0,0,0,0.08); display: flex; justify-content: space-between; align-items: center; }
+.write-header h2 { font-family: 'Cinzel Decorative', serif; color: var(--dark); font-size: 1.3rem; }
+.write-body { padding: 28px; }
+.write-body .form-group { margin-bottom: 18px; }
+.write-body label { display: block; font-size: 0.78rem; font-weight: 700; color: var(--text-light); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 1px; }
+.write-body input, .write-body textarea, .write-body select { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 8px; font-size: 0.9rem; color: var(--text); background: var(--cream); font-family: 'Lato', sans-serif; }
+.write-body textarea.blog-editor { height: 200px; resize: vertical; }
+.write-body input:focus, .write-body textarea:focus, .write-body select:focus { outline: none; border-color: var(--emerald); }
+.write-footer { padding: 0 28px 28px; display: flex; gap: 12px; justify-content: flex-end; }
+.btn-draft { padding: 11px 24px; border: 1.5px solid var(--text-light); background: transparent; color: var(--text-light); border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: all 0.2s; }
+.btn-draft:hover { border-color: var(--text); color: var(--text); }
+.btn-publish { padding: 11px 28px; background: linear-gradient(135deg, var(--emerald), var(--emerald-light)); color: white; border: none; border-radius: 8px; cursor: pointer; font-weight: 700; font-size: 0.85rem; transition: all 0.25s; }
+.btn-publish:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(26,107,74,0.3); }
+
+/* ===== NOTIFICATION ===== */
+.notification { position: fixed; top: 24px; right: 24px; z-index: 99999; display: flex; flex-direction: column; gap: 10px; }
+.notif { display: flex; align-items: center; gap: 12px; background: white; padding: 14px 20px; border-radius: 12px; box-shadow: 0 8px 30px rgba(0,0,0,0.15); min-width: 280px; max-width: 380px; border-left: 4px solid var(--emerald); animation: slideIn 0.3s ease; }
+@keyframes slideIn { from{transform:translateX(100px);opacity:0} to{transform:translateX(0);opacity:1} }
+.notif.success { border-left-color: #22c55e; }
+.notif.error { border-left-color: #ef4444; }
+.notif.warning { border-left-color: #f59e0b; }
+.notif i { font-size: 1.1rem; }
+.notif.success i { color: #22c55e; }
+.notif.error i { color: #ef4444; }
+.notif.warning i { color: #f59e0b; }
+.notif p { font-size: 0.88rem; color: var(--text); flex: 1; }
+
+/* ===== NEWSLETTER ===== */
+.newsletter { background: linear-gradient(135deg, var(--emerald-dark), var(--dark)); padding: 60px 0; }
+.newsletter-inner { max-width: 650px; margin: auto; padding: 0 20px; text-align: center; }
+.newsletter-inner h2 { font-family: 'Cinzel Decorative', serif; font-size: 1.8rem; color: white; margin-bottom: 10px; }
+.newsletter-inner p { color: rgba(255,255,255,0.6); margin-bottom: 28px; }
+.newsletter-form { display: flex; gap: 10px; }
+.newsletter-form input { flex: 1; padding: 14px 20px; border-radius: 10px; border: none; font-size: 0.9rem; background: rgba(255,255,255,0.1); color: white; font-family: 'Lato', sans-serif; border: 1.5px solid rgba(255,255,255,0.1); }
+.newsletter-form input::placeholder { color: rgba(255,255,255,0.4); }
+.newsletter-form input:focus { outline: none; border-color: var(--gold); }
+.newsletter-form button { padding: 14px 28px; background: var(--gold); color: var(--dark); border: none; border-radius: 10px; font-weight: 700; cursor: pointer; font-size: 0.9rem; transition: all 0.2s; white-space: nowrap; }
+.newsletter-form button:hover { background: var(--gold-light); }
+
+/* ===== FOOTER ===== */
+footer { background: var(--dark); color: rgba(255,255,255,0.6); padding: 60px 0 0; }
+.footer-inner { max-width: 1200px; margin: auto; padding: 0 20px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; margin-bottom: 50px; }
+.footer-brand p { font-size: 0.85rem; line-height: 1.9; margin: 16px 0; max-width: 280px; }
+.footer-brand .footer-socials { display: flex; gap: 10px; }
+.footer-social-btn { width: 36px; height: 36px; border-radius: 8px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.5); text-decoration: none; transition: all 0.2s; }
+.footer-social-btn:hover { background: var(--gold); color: var(--dark); border-color: var(--gold); }
+.footer-col h4 { color: var(--gold); font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 18px; }
+.footer-col ul { list-style: none; }
+.footer-col ul li { margin-bottom: 10px; }
+.footer-col ul a { color: rgba(255,255,255,0.55); text-decoration: none; font-size: 0.85rem; transition: color 0.2s; }
+.footer-col ul a:hover { color: var(--gold); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.06); padding: 20px 0; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; font-size: 0.78rem; }
+.footer-bottom a { color: var(--gold); text-decoration: none; }
+
+/* ===== FLOATING BTNS ===== */
+.fab-group { position: fixed; bottom: 28px; right: 28px; z-index: 400; display: flex; flex-direction: column; gap: 12px; align-items: flex-end; }
+.fab { width: 52px; height: 52px; border-radius: 50%; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; transition: all 0.25s; box-shadow: 0 6px 20px rgba(0,0,0,0.25); }
+.fab:hover { transform: scale(1.1); }
+.fab-main { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--dark); }
+.fab-wa { background: #25d366; color: white; }
+.fab-write { background: var(--emerald); color: white; }
+.fab-scroll { background: var(--dark); color: white; border: 1.5px solid rgba(255,255,255,0.1); }
+.fab-label { font-size: 0.72rem; background: var(--dark); color: white; padding: 4px 10px; border-radius: 20px; white-space: nowrap; position: absolute; right: 60px; opacity: 0; transition: opacity 0.2s; pointer-events: none; }
+.fab:hover .fab-label { opacity: 1; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1024px) {
+  .hero-inner { grid-template-columns: 1fr; gap: 40px; }
+  .hero-visual { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .stats-row { grid-template-columns: repeat(3,1fr); }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .admin-stats { grid-template-columns: repeat(2,1fr); }
+}
+@media (max-width: 768px) {
+  .nav-links, .nav-actions .btn-outline { display: none; }
+  .hamburger { display: flex; }
+  .about-grid, .donate-grid, .contact-grid { grid-template-columns: 1fr; }
+  .hero-visual { display: none; }
+  .footer-grid { grid-template-columns: 1fr; }
+  .admin-sidebar { width: 220px; }
+  .admin-stats { grid-template-columns: 1fr 1fr; }
+  .newsletter-form { flex-direction: column; }
+  .form-row { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+  .top-bar .tb-contact { display: none; }
+  .admin-panel { flex-direction: column; }
+  .admin-sidebar { width: 100%; min-height: auto; }
+  .admin-nav { display: flex; overflow-x: auto; padding: 8px 0; }
+  .admin-nav-item { min-width: 120px; border-left: none; border-bottom: 3px solid transparent; }
+  .admin-nav-item.active { border-bottom-color: var(--gold); border-left: none; }
+}
+
+/* Write form toolbar */
+.editor-toolbar { display: flex; gap: 6px; margin-bottom: 8px; flex-wrap: wrap; }
+.toolbar-btn { padding: 6px 10px; background: var(--cream); border: 1px solid rgba(0,0,0,0.1); border-radius: 6px; cursor: pointer; font-size: 0.78rem; font-weight: 700; color: var(--text); transition: all 0.2s; }
+.toolbar-btn:hover { background: var(--emerald); color: white; border-color: var(--emerald); }
+
+/* Search bar */
+.search-bar { max-width: 500px; margin: 0 auto 40px; position: relative; }
+.search-bar input { width: 100%; padding: 14px 50px 14px 20px; border-radius: 30px; border: 1.5px solid rgba(0,0,0,0.1); font-size: 0.9rem; background: white; font-family: 'Lato', sans-serif; color: var(--text); box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+.search-bar input:focus { outline: none; border-color: var(--emerald); }
+.search-bar i { position: absolute; right: 18px; top: 50%; transform: translateY(-50%); color: var(--text-light); }
+</style>
+</head>
+<body>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="loader-arabic">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</div>
+  <div class="loader-bar"><div class="loader-fill"></div></div>
+</div>
+
+<!-- NOTIFICATION CONTAINER -->
+<div class="notification" id="notifications"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="tb-inner">
+    <div class="tb-contact">
+      <span><i class="fas fa-phone"></i> <a href="tel:+8801317770255">01317770255</a></span>
+      <span><i class="fab fa-whatsapp"></i> <a href="https://wa.me/8801317770255">WhatsApp</a></span>
+      <span><i class="fas fa-envelope"></i> <a href="mailto:hamzahasanadnan@gmail.com">hamzahasanadnan@gmail.com</a></span>
+    </div>
+    <div>
+      <span><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:5px"></i> Bangladesh · Dhaka · Sirajganj</span>
+    </div>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<nav>
+  <div class="nav-inner">
+    <a class="logo" href="#home">
+      <div class="logo-icon">☽</div>
+      <div class="logo-text">
+        <span>Da'wah Hadith</span>
+        <span>Globally</span>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#home" class="active">Home</a></li>
+      <li><a href="#about">About Sheikh</a></li>
+      <li class="dropdown">
+        <a href="#blog">Blog <i class="fas fa-chevron-down" style="font-size:0.65rem;margin-left:3px"></i></a>
+        <ul class="drop-menu">
+          <li><a href="#blog">All Posts</a></li>
+          <li><a href="#" onclick="filterBlog('Hadith')">Hadith</a></li>
+          <li><a href="#" onclick="filterBlog('Fiqh')">Fiqh</a></li>
+          <li><a href="#" onclick="filterBlog('Seerah')">Seerah</a></li>
+          <li><a href="#" onclick="openWriteModal()">Write a Post</a></li>
+        </ul>
+      </li>
+      <li><a href="#hadiths">Hadiths</a></li>
+      <li><a href="#donate">Donate</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="btn btn-outline" onclick="openAuthModal('login')"><i class="fas fa-user"></i> Login</button>
+      <button class="btn btn-gold" onclick="openAuthModal('register')"><i class="fas fa-star-and-crescent"></i> Register</button>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</nav>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav">
+  <button class="mobile-close" onclick="toggleMobileNav()"><i class="fas fa-times"></i></button>
+  <a href="#home" onclick="toggleMobileNav()">Home</a>
+  <a href="#about" onclick="toggleMobileNav()">About Sheikh</a>
+  <a href="#blog" onclick="toggleMobileNav()">Blog</a>
+  <a href="#hadiths" onclick="toggleMobileNav()">Hadiths</a>
+  <a href="#donate" onclick="toggleMobileNav()">Donate</a>
+  <a href="#contact" onclick="toggleMobileNav()">Contact</a>
+  <a href="#" onclick="openAuthModal('login');toggleMobileNav()">Login</a>
+  <a href="#" onclick="openWriteModal();toggleMobileNav()"><i class="fas fa-pen" style="margin-right:8px"></i>Write Post</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-inner">
+    <div class="hero-content">
+      <div class="hero-badge"><i class="fas fa-star-and-crescent"></i> Da'wah for the Ummah</div>
+      <div class="hero-arabic">الدَّعْوَةُ إِلَى اللهِ</div>
+      <h1 class="hero-title">Da'wah Hadith <span>Globally</span></h1>
+      <p class="hero-subtitle">Spreading authentic Islamic knowledge, Hadiths, and Da'wah across the globe — guided by the Quran and Sunnah of the Prophet Muhammad ﷺ.</p>
+      <div class="hero-sheikh">
+        <div class="sheikh-avatar"><i class="fas fa-user-graduate"></i></div>
+        <div class="sheikh-info">
+          <h4>Sheikh Hamza Al Hassan</h4>
+          <p><i class="fas fa-map-marker-alt" style="color:var(--gold);margin-right:4px"></i> Dhaka & Sirajganj, Bangladesh</p>
+        </div>
+      </div>
+      <div class="hero-btns">
+        <a href="#hadiths" class="btn btn-gold"><i class="fas fa-book-open"></i> Explore Hadiths</a>
+        <a href="#blog" class="btn btn-outline"><i class="fas fa-pen-nib"></i> Read Blog</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card">
+        <h3><i class="fas fa-quote-left" style="color:var(--gold-dark);margin-right:8px;font-size:0.9rem"></i> Hadith of the Day</h3>
+        <div class="hadith-text">بَلِّغُوا عَنِّي وَلَوْ آيَةً</div>
+        <div style="color:rgba(255,255,255,0.7);font-size:0.88rem;margin-bottom:8px;font-style:italic">"Convey from me, even if it is one verse."</div>
+        <div class="hadith-ref">— Sahih Al-Bukhari, 3461</div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-card"><span class="stat-num" id="sBlogs">0</span><span class="stat-lbl">Blog Posts</span></div>
+        <div class="stat-card"><span class="stat-num" id="sHadiths">0</span><span class="stat-lbl">Hadiths</span></div>
+        <div class="stat-card"><span class="stat-num" id="sUsers">0</span><span class="stat-lbl">Members</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TICKER -->
+<div class="ticker">
+  <div class="ticker-inner">
+    <span class="ticker-item">✦ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+    <span class="ticker-item">✦ Spread Knowledge — It is Sadaqah Jariyah</span>
+    <span class="ticker-item">✦ الدَّعْوَةُ إِلَى اللهِ — Calling to Allah</span>
+    <span class="ticker-item">✦ Sheikh Hamza Al Hassan — Da'wah Hadith Globally</span>
+    <span class="ticker-item">✦ Bangladesh · Dhaka · Sirajganj</span>
+    <span class="ticker-item">✦ بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</span>
+    <span class="ticker-item">✦ Spread Knowledge — It is Sadaqah Jariyah</span>
+    <span class="ticker-item">✦ الدَّعْوَةُ إِلَى اللهِ — Calling to Allah</span>
+    <span class="ticker-item">✦ Sheikh Hamza Al Hassan — Da'wah Hadith Globally</span>
+    <span class="ticker-item">✦ Bangladesh · Dhaka · Sirajganj</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-image-box">
+        <div class="about-img-placeholder">
+          <div style="font-family:'Scheherazade New',serif;font-size:3rem;color:var(--gold);text-align:center;z-index:1">شيخ حمزة</div>
+          <i class="fas fa-user-graduate sheikh-big-icon" style="z-index:1;margin-top:-10px"></i>
+          <div class="sheikh-name-arabic" style="z-index:1">الحسن</div>
+        </div>
+        <div class="about-badge">
+          <span>10+</span>
+          Years of Da'wah
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-tag">About the Sheikh</div>
+        <h2>Sheikh Hamza <span>Al Hassan</span></h2>
+        <p>Sheikh Hamza Al Hassan is a dedicated Islamic scholar and Da'ee (caller to Islam) based in Bangladesh. With deep knowledge of Hadith sciences and Islamic jurisprudence, he has devoted his life to spreading authentic Islamic knowledge to Muslims globally.</p>
+        <p>His mission is rooted in the Prophetic tradition: conveying the message of Islam with wisdom, clarity, and compassion — from the heart of Bangladesh to Muslims worldwide.</p>
+        <div class="about-info-grid">
+          <div class="info-item"><i class="fas fa-map-marker-alt"></i><div><strong>Location</strong><span>Dhaka & Sirajganj, Bangladesh</span></div></div>
+          <div class="info-item"><i class="fas fa-phone"></i><div><strong>Phone / WhatsApp</strong><span>01317770255</span></div></div>
+          <div class="info-item"><i class="fas fa-envelope"></i><div><strong>Email</strong><span>hamzahasanadnan@gmail.com</span></div></div>
+          <div class="info-item"><i class="fas fa-mosque"></i><div><strong>Specialization</strong><span>Hadith, Fiqh, Da'wah</span></div></div>
+        </div>
+        <div class="social-links">
+          <a href="tel:+8801317770255" class="social-btn bkash"><i class="fas fa-mobile-alt"></i> Bkash: 01317770255</a>
+          <a href="https://wa.me/8801317770255" class="social-btn whatsapp" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+          <a href="mailto:hamzahasanadnan@gmail.com" class="social-btn email"><i class="fas fa-envelope"></i> Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG -->
+<section class="blog" id="blog">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Islamic Articles</div>
+      <h2 class="section-title">Latest <span>Blog Posts</span></h2>
+      <p class="section-sub">Read, learn, and share authentic Islamic knowledge from verified sources</p>
+    </div>
+    <div class="search-bar">
+      <input type="text" id="blogSearch" placeholder="Search articles..." oninput="searchBlog(this.value)">
+      <i class="fas fa-search"></i>
+    </div>
+    <div class="blog-filter">
+      <button class="filter-btn active" onclick="filterBlog('all', this)">All</button>
+      <button class="filter-btn" onclick="filterBlog('Hadith', this)">Hadith</button>
+      <button class="filter-btn" onclick="filterBlog('Fiqh', this)">Fiqh</button>
+      <button class="filter-btn" onclick="filterBlog('Seerah', this)">Seerah</button>
+      <button class="filter-btn" onclick="filterBlog('Aqeedah', this)">Aqeedah</button>
+      <button class="filter-btn" onclick="filterBlog('Da\'wah', this)">Da'wah</button>
+    </div>
+    <div class="blog-grid" id="blogGrid"></div>
+    <div style="text-align:center;margin-top:40px">
+      <button class="btn btn-gold" onclick="openWriteModal()"><i class="fas fa-pen"></i> Write a Blog Post</button>
+    </div>
+  </div>
+</section>
+
+<!-- HADITHS -->
+<section class="hadiths section-dark" id="hadiths">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Prophetic Traditions</div>
+      <h2 class="section-title" style="color:white">Authentic <span style="color:var(--gold)">Hadiths</span></h2>
+      <p class="section-sub">Collected from Sahih Bukhari, Muslim, Abu Dawud, Tirmidhi, and more</p>
+    </div>
+    <div class="hadith-cards" id="hadithGrid"></div>
+  </div>
+</section>
+
+<!-- DONATE -->
+<section class="donate" id="donate">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Support Da'wah</div>
+      <h2 class="section-title">Support This <span>Mission</span></h2>
+      <p class="section-sub">Your donation helps spread authentic Islamic knowledge and support Da'wah activities</p>
+    </div>
+    <div class="donate-grid">
+      <div class="donate-content">
+        <h2>Sadaqah <span>Jariyah</span></h2>
+        <p>The Prophet ﷺ said: "When a person dies, all their deeds end except three: a continuing charity, beneficial knowledge, or a righteous child who prays for them." <em>(Muslim 1631)</em></p>
+        <p>Support Sheikh Hamza Al Hassan's Da'wah mission. Every contribution, big or small, helps us reach more hearts with the message of Islam.</p>
+        <div class="donate-methods">
+          <div class="donate-method dm-bkash" onclick="copyText('01317770255','Bkash number')">
+            <div class="dm-icon"><i class="fas fa-mobile-alt"></i></div>
+            <div class="dm-info"><strong>Bkash</strong><span>01317770255 (Sheikh Hamza Al Hassan) — Click to copy</span></div>
+            <i class="fas fa-copy" style="color:#e70074;margin-left:auto"></i>
+          </div>
+          <div class="donate-method" style="border-color:rgba(37,211,102,0.3);background:rgba(37,211,102,0.05);" onclick="window.open('https://wa.me/8801317770255','_blank')">
+            <div class="dm-icon" style="background:rgba(37,211,102,0.15);color:#25d366"><i class="fab fa-whatsapp"></i></div>
+            <div class="dm-info"><strong>WhatsApp</strong><span>Contact for bank transfer or other methods</span></div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="background:var(--cream);padding:32px;border-radius:var(--radius);border:1.5px solid rgba(0,0,0,0.07)">
+          <h3 style="font-family:'Cinzel Decorative',serif;color:var(--dark);font-size:1.1rem;margin-bottom:20px">Quick Donate</h3>
+          <div class="donate-amounts">
+            <button class="amount-btn" onclick="selectAmount(this,'100')">৳100</button>
+            <button class="amount-btn" onclick="selectAmount(this,'500')">৳500</button>
+            <button class="amount-btn" onclick="selectAmount(this,'1000')">৳1,000</button>
+            <button class="amount-btn" onclick="selectAmount(this,'2000')">৳2,000</button>
+            <button class="amount-btn" onclick="selectAmount(this,'5000')">৳5,000</button>
+            <button class="amount-btn" onclick="selectAmount(this,'other')">Other</button>
+          </div>
+          <div class="donate-form">
+            <input type="number" id="donateAmount" placeholder="Enter amount (BDT)" min="1">
+            <input type="text" id="donatePhone" placeholder="Your Bkash/phone number">
+            <input type="text" id="donateName" placeholder="Your name (optional)">
+            <button class="btn-donate" onclick="processDonate()"><i class="fas fa-hand-holding-heart" style="margin-right:8px"></i> Donate Now via Bkash</button>
+          </div>
+          <p style="font-size:0.75rem;color:var(--text-light);text-align:center;margin-top:12px"><i class="fas fa-lock" style="color:var(--emerald);margin-right:4px"></i> Send to Bkash: 01317770255 (Personal)</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-inner">
+    <div class="section-header">
+      <div class="section-tag">Get in Touch</div>
+      <h2 class="section-title">Contact <span>Us</span></h2>
+      <p class="section-sub">Reach out to Sheikh Hamza Al Hassan for Da'wah inquiries, collaborations, or questions</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Contact Information</h3>
+        <div class="contact-item">
+          <i class="fas fa-mobile-alt"></i>
+          <div><strong>Phone & Bkash</strong><span><a href="tel:+8801317770255">01317770255</a></span></div>
+        </div>
+        <div class="contact-item">
+          <i class="fab fa-whatsapp"></i>
+          <div><strong>WhatsApp</strong><span><a href="https://wa.me/8801317770255" target="_blank">01317770255</a></span></div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-envelope"></i>
+          <div><strong>Email</strong><span><a href="mailto:hamzahasanadnan@gmail.com">hamzahasanadnan@gmail.com</a></span></div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-map-marker-alt"></i>
+          <div><strong>Location</strong><span>Dhaka & Sirajganj, Bangladesh</span></div>
+        </div>
+        <div class="contact-item">
+          <i class="fas fa-clock"></i>
+          <div><strong>Response Time</strong><span>Usually within 24 hours, Insha'Allah</span></div>
+        </div>
+        <div style="margin-top:24px;background:linear-gradient(135deg,var(--dark),var(--emerald-dark));padding:24px;border-radius:14px;color:white">
+          <div style="font-family:'Scheherazade New',serif;font-size:1.6rem;text-align:center;color:var(--gold);margin-bottom:8px">وَتَعَاوَنُوا عَلَى الْبِرِّ وَالتَّقْوَىٰ</div>
+          <p style="font-size:0.8rem;text-align:center;opacity:0.7;font-style:italic">"Cooperate in righteousness and piety" — Al-Ma'idah 5:2</p>
+        </div>
+      </div>
+      <div class="contact-form">
+        <h3>Send a Message</h3>
+        <div class="form-row">
+          <div class="form-group"><label>First Name</label><input type="text" id="cfName" placeholder="Your name"></div>
+          <div class="form-group"><label>Last Name</label><input type="text" id="cfLast" placeholder="Last name"></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="cfEmail" placeholder="your@email.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" id="cfPhone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group">
+          <label>Subject</label>
+          <select id="cfSubject">
+            <option value="">Select a subject</option>
+            <option>Da'wah Inquiry</option>
+            <option>Hadith Question</option>
+            <option>Collaboration</option>
+            <option>Donation</option>
+            <option>General Question</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea id="cfMsg" placeholder="Write your message here..."></textarea></div>
+        <button class="btn-submit" onclick="sendMessage()"><i class="fas fa-paper-plane" style="margin-right:8px"></i> Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWSLETTER -->
+<div class="newsletter">
+  <div class="newsletter-inner">
+    <div style="font-family:'Scheherazade New',serif;font-size:2rem;color:var(--gold);margin-bottom:8px">اشتراك</div>
+    <h2>Subscribe for Updates</h2>
+    <p>Get the latest Hadiths, blog posts, and Islamic reminders delivered to your inbox</p>
+    <div class="newsletter-form">
+      <input type="email" id="nlEmail" placeholder="Enter your email address">
+      <button onclick="subscribe()"><i class="fas fa-paper-plane"></i> Subscribe</button>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo" style="margin-bottom:12px">
+          <div class="logo-icon" style="width:40px;height:40px;font-size:1.1rem">☽</div>
+          <div class="logo-text"><span>Da'wah Hadith Globally</span></div>
+        </div>
+        <p>Spreading authentic Islamic knowledge, Hadiths, and Da'wah across the globe under the guidance of Sheikh Hamza Al Hassan from Bangladesh.</p>
+        <div class="footer-socials">
+          <a href="https://wa.me/8801317770255" class="footer-social-btn" target="_blank"><i class="fab fa-whatsapp"></i></a>
+          <a href="mailto:hamzahasanadnan@gmail.com" class="footer-social-btn"><i class="fas fa-envelope"></i></a>
+          <a href="tel:+8801317770255" class="footer-social-btn"><i class="fas fa-phone"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#about">About Sheikh</a></li>
+          <li><a href="#blog">Blog</a></li>
+          <li><a href="#hadiths">Hadiths</a></li>
+          <li><a href="#donate">Donate</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="#" onclick="filterBlog('Hadith')">Hadith Science</a></li>
+          <li><a href="#" onclick="filterBlog('Fiqh')">Islamic Fiqh</a></li>
+          <li><a href="#" onclick="filterBlog('Seerah')">Seerah</a></li>
+          <li><a href="#" onclick="filterBlog('Aqeedah')">Aqeedah</a></li>
+          <li><a href="#" onclick="filterBlog('Da\'wah')">Da'wah</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="tel:+8801317770255"><i class="fas fa-phone" style="margin-right:6px"></i>01317770255</a></li>
+          <li><a href="https://wa.me/8801317770255"><i class="fab fa-whatsapp" style="margin-right:6px"></i>WhatsApp</a></li>
+          <li><a href="mailto:hamzahasanadnan@gmail.com"><i class="fas fa-envelope" style="margin-right:6px"></i>Email</a></li>
+          <li><a href="#"><i class="fas fa-map-marker-alt" style="margin-right:6px"></i>Dhaka, Bangladesh</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Da'wah Hadith Globally — Sheikh Hamza Al Hassan. All rights reserved.</span>
+      <span><a href="#" onclick="openAdmin()">Admin Panel</a> · Made with ❤️ for the Ummah</span>
+    </div>
+  </div>
+</footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="fab-group">
+  <div style="position:relative">
+    <button class="fab fab-scroll" onclick="scrollToTop()" title="Back to top"><i class="fas fa-arrow-up"></i></button>
+  </div>
+  <div style="position:relative">
+    <button class="fab fab-write" onclick="openWriteModal()" title="Write a post"><i class="fas fa-pen"></i></button>
+  </div>
+  <div style="position:relative">
+    <a href="https://wa.me/8801317770255" class="fab fab-wa" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  </div>
+</div>
+
+<!-- BLOG READ MODAL -->
+<div class="modal-overlay" id="blogModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalBlogTitle">Blog Title</h2>
+      <button class="modal-close" onclick="closeModal('blogModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body">
+      <div style="display:flex;gap:14px;margin-bottom:16px;font-size:0.78rem;color:var(--text-light);flex-wrap:wrap">
+        <span id="modalBlogMeta"></span>
+      </div>
+      <div id="modalBlogContent" class="blog-full"></div>
+    </div>
+  </div>
+</div>
+
+<!-- HADITH DETAIL MODAL -->
+<div class="modal-overlay" id="hadithModal">
+  <div class="modal">
+    <div class="modal-header">
+      <h2>Hadith Detail</h2>
+      <button class="modal-close" onclick="closeModal('hadithModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="modal-body" id="hadithModalBody"></div>
+  </div>
+</div>
+
+<!-- WRITE BLOG MODAL -->
+<div class="write-modal" id="writeModal">
+  <div class="write-box">
+    <div class="write-header">
+      <h2>✍️ Write a Blog Post</h2>
+      <button class="modal-close" onclick="closeModal('writeModal')"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="write-body">
+      <div class="form-group"><label>Title</label><input type="text" id="wTitle" placeholder="Enter blog post title..."></div>
+      <div class="form-row">
+        <div class="form-group"><label>Category</label>
+          <select id="wCat">
+            <option value="Hadith">Hadith</option>
+            <option value="Fiqh">Fiqh</option>
+            <option value="Seerah">Seerah</option>
+            <option value="Aqeedah">Aqeedah</option>
+            <option value="Da'wah">Da'wah</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Author Name</label><input type="text" id="wAuthor" placeholder="Your name"></div>
+      </div>
+      <div class="form-group"><label>Excerpt (short summary)</label><input type="text" id="wExcerpt" placeholder="Brief description of your post..."></div>
+      <div class="form-group">
+        <label>Content</label>
+        <div class="editor-toolbar">
+          <button class="toolbar-btn" onclick="insertText('[B]','[/B]')"><b>B</b></button>
+          <button class="toolbar-btn" onclick="insertText('[I]','[/I]')"><i>I</i></button>
+          <button class="toolbar-btn" onclick="insertText('\n• ','')">List</button>
+          <button class="toolbar-btn" onclick="insertText('[HADITH]','[/HADITH]')">Hadith</button>
+          <button class="toolbar-btn" onclick="insertText('[ARABIC]','[/ARABIC]')">Arabic</button>
+          <button class="toolbar-btn" onclick="insertText('\n---\n','')">Divider</button>
+        </div>
+        <textarea class="blog-editor" id="wContent" placeholder="Write your full blog post content here... Use [ARABIC][/ARABIC] for Arabic text, [HADITH][/HADITH] for Hadith blocks."></textarea>
+      </div>
+    </div>
+    <div class="write-footer">
+      <button class="btn-draft" onclick="saveDraft()"><i class="fas fa-save" style="margin-right:6px"></i>Save Draft</button>
+      <button class="btn-publish" onclick="publishPost()"><i class="fas fa-paper-plane" style="margin-right:6px"></i>Publish Post</button>
+    </div>
+  </div>
+</div>
+
+<!-- AUTH MODAL -->
+<div class="auth-modal" id="authModal">
+  <div class="auth-box">
+    <div class="auth-header">
+      <div class="auth-logo">☽</div>
+      <h2>Da'wah Hadith Globally</h2>
+      <p>Join the community of knowledge seekers</p>
+    </div>
+    <div class="auth-tabs">
+      <div class="auth-tab active" id="tabLogin" onclick="switchTab('login')">Login</div>
+      <div class="auth-tab" id="tabReg" onclick="switchTab('register')">Register</div>
+    </div>
+    <!-- LOGIN -->
+    <div class="auth-body" id="loginForm">
+      <div class="auth-form">
+        <div class="form-group"><label>Email or Phone</label><input type="text" id="loginEmail" placeholder="email or phone number"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="loginPass" placeholder="••••••••"></div>
+        <span class="forgot-link" onclick="showNotif('Password reset link sent to your email!','warning')">Forgot password?</span>
+        <button class="auth-submit" onclick="doLogin()"><i class="fas fa-sign-in-alt" style="margin-right:8px"></i>Login</button>
+        <button class="auth-close" onclick="closeModal('authModal')">Cancel</button>
+      </div>
+    </div>
+    <!-- REGISTER -->
+    <div class="auth-body" id="registerForm" style="display:none">
+      <div class="auth-form">
+        <div class="form-group"><label>Full Name</label><input type="text" id="regName" placeholder="Your full name"></div>
+        <div class="form-group"><label>Email</label><input type="email" id="regEmail" placeholder="your@email.com"></div>
+        <div class="form-group"><label>Phone</label><input type="tel" id="regPhone" placeholder="01XXXXXXXXX"></div>
+        <div class="form-group"><label>Password</label><input type="password" id="regPass" placeholder="Create a password"></div>
+        <div class="form-group"><label>Account Type</label>
+          <div class="auth-role">
+            <div class="role-btn active" id="roleUser" onclick="selectRole('user')"><i class="fas fa-user" style="margin-right:6px"></i>Reader</div>
+            <div class="role-btn" id="roleWriter" onclick="selectRole('writer')"><i class="fas fa-pen" style="margin-right:6px"></i>Writer</div>
+          </div>
+        </div>
+        <button class="auth-submit" onclick="doRegister()"><i class="fas fa-user-plus" style="margin-right:8px"></i>Create Account</button>
+        <button class="auth-close" onclick="closeModal('authModal')">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div class="admin-panel" id="adminPanel">
+  <div class="admin-sidebar">
+    <div class="admin-logo">
+      <h2>Da'wah Admin</h2>
+      <p>Sheikh Hamza Al Hassan</p>
+    </div>
+    <div class="admin-nav">
+      <div class="admin-nav-item active" onclick="adminTab('dashboard',this)"><i class="fas fa-tachometer-alt"></i> Dashboard</div>
+      <div class="admin-nav-item" onclick="adminTab('posts',this)"><i class="fas fa-newspaper"></i> Blog Posts</div>
+      <div class="admin-nav-item" onclick="adminTab('hadiths',this)"><i class="fas fa-book"></i> Hadiths</div>
+      <div class="admin-nav-item" onclick="adminTab('users',this)"><i class="fas fa-users"></i> Users</div>
+      <div class="admin-nav-item" onclick="adminTab('messages',this)"><i class="fas fa-envelope"></i> Messages</div>
+      <div class="admin-nav-item" onclick="adminTab('donations',this)"><i class="fas fa-hand-holding-heart"></i> Donations</div>
+      <div class="admin-nav-item" onclick="adminTab('settings',this)"><i class="fas fa-cog"></i> Settings</div>
+    </div>
+    <div style="padding:16px 20px;border-top:1px solid rgba(255,255,255,0.06)">
+      <button onclick="closeAdmin()" style="width:100%;padding:10px;background:rgba(239,68,68,0.15);color:#f87171;border:none;border-radius:8px;cursor:pointer;font-weight:700;font-size:0.83rem;"><i class="fas fa-sign-out-alt" style="margin-right:8px"></i>Exit Admin</button>
+    </div>
+  </div>
+  <div class="admin-main">
+    <div class="admin-topbar">
+      <h1 id="adminTabTitle">Dashboard</h1>
+      <div class="admin-user" onclick="closeAdmin()">
+        <div class="admin-avatar"><i class="fas fa-user-shield"></i></div>
+        <span>Sheikh Hamza (Admin)</span>
+        <i class="fas fa-chevron-down" style="font-size:0.7rem"></i>
+      </div>
+    </div>
+    <div class="admin-content" id="adminContent"></div>
+  </div>
+</div>
+
+<script>
+// ===== DATA STORE =====
+let store = {
+  blogs: [
+    { id:1, title:"The Importance of Seeking Knowledge in Islam", cat:"Hadith", author:"Sheikh Hamza Al Hassan", date:"2025-06-01", status:"published", excerpt:"The Prophet ﷺ emphasised the obligation of seeking knowledge upon every Muslim, man and woman...", content:"The Prophet Muhammad ﷺ said: 'Seeking knowledge is an obligation upon every Muslim.' (Ibn Majah 224)\n\nThis hadith establishes one of the most important principles in Islam — that knowledge is not merely a virtue, but a religious duty. Whether it is knowledge of the Quran, the Sunnah, or the fundamental pillars of faith, every Muslim is required to pursue it.\n\n[ARABIC]طَلَبُ الْعِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ[/ARABIC]\n\nIslamic scholarship has always been at the heart of Muslim civilisation. Scholars throughout history dedicated their lives to preserving and transmitting the authentic teachings of the Prophet ﷺ to future generations.\n\nKey lessons from this hadith:\n• Knowledge is an individual obligation (fard 'ain) for basic Islamic matters\n• It applies equally to men and women\n• The pursuit of knowledge is an act of worship\n• Ignorance is never an excuse in matters of deen\n\nMay Allah bless us all with beneficial knowledge. Ameen.", likes:24, icon:"📚", color:"#1a6b4a" },
+    { id:2, title:"Patience (Sabr) — The Gift of the Believer", cat:"Aqeedah", author:"Sheikh Hamza Al Hassan", date:"2025-05-28", status:"published", excerpt:"Allah tests His servants with trials, and patience is the key to passing those tests with faith intact...", content:"Allah ﷻ says in the Quran:\n\n[ARABIC]وَبَشِّرِ الصَّابِرِينَ الَّذِينَ إِذَا أَصَابَتْهُم مُّصِيبَةٌ قَالُوا إِنَّا لِلَّهِ وَإِنَّا إِلَيْهِ رَاجِعُونَ[/ARABIC]\n\n'And give glad tidings to the patient — those who, when afflicted with a calamity, say: Indeed we belong to Allah, and indeed to Him we will return.' (Al-Baqarah 2:155-156)\n\nPatience (Sabr) in Islam is not passive resignation. It is an active state of trusting Allah while continuing to strive, to make dua, and to seek His mercy. The believers know that every trial is a purification and an elevation of rank.\n\nThe Prophet ﷺ said: 'How wonderful is the case of a believer; there is good for him in everything and this applies only to a believer. If prosperity attends him, he expresses gratitude to Allah and that is good for him; and if adversity befalls him, he endures it patiently and that is better for him.' (Muslim 2999)", likes:37, icon:"🤲", color:"#8a6d1f" },
+    { id:3, title:"The Five Pillars of Islam — A Complete Guide", cat:"Fiqh", author:"Sheikh Hamza Al Hassan", date:"2025-05-20", status:"published", excerpt:"Understanding the foundational obligations upon every Muslim: Shahada, Salah, Zakat, Sawm, and Hajj...", content:"Islam is built upon five pillars, as the Prophet ﷺ explained:\n\n[ARABIC]بُنِيَ الْإِسْلاَمُ عَلَى خَمْسٍ[/ARABIC]\n\n'Islam is built upon five things...' (Bukhari 8)\n\n1. **The Shahada** — Testimony of faith: There is no god but Allah, and Muhammad ﷺ is His messenger.\n\n2. **Salah** — The five daily prayers, which are the direct connection between the servant and his Lord.\n\n3. **Zakat** — The purification of wealth through obligatory charity, given to those in need.\n\n4. **Sawm** — Fasting the month of Ramadan, a month of spiritual renewal, reflection, and worship.\n\n5. **Hajj** — The pilgrimage to Mecca, obligatory once in a lifetime for those who are able.\n\nThese five pillars form the skeleton of a Muslim's life. They are not burdens — they are gifts from Allah to keep us connected to Him throughout our lives.", likes:55, icon:"🕌", color:"#1a6b4a" },
+    { id:4, title:"The Life of Prophet Muhammad ﷺ — An Introduction to Seerah", cat:"Seerah", author:"Sheikh Hamza Al Hassan", date:"2025-05-15", status:"published", excerpt:"The Prophet's life is the most complete and documented example for all of humanity to follow...", content:"The Seerah (biography) of the Prophet Muhammad ﷺ is the most detailed and historically documented life story of any human being in history.\n\nBorn in Mecca in 570 CE, he ﷺ was known even before prophethood as Al-Amin — 'The Trustworthy One.' At the age of 40, he received the first revelation in the Cave of Hira:\n\n[ARABIC]اقْرَأْ بِاسْمِ رَبِّكَ الَّذِي خَلَقَ[/ARABIC]\n\n'Read in the name of your Lord who created...' (Al-Alaq 96:1)\n\nHis 23 years of prophethood transformed the Arabian Peninsula and ultimately the world. He ﷺ exemplified every virtue: mercy, justice, humility, courage, patience, and love for his community.\n\nStudying the Seerah is not just historical learning — it is learning how to live as a Muslim in every circumstance of life.", likes:41, icon:"☀️", color:"#8a6d1f" },
+    { id:5, title:"Da'wah — Our Collective Responsibility", cat:"Da'wah", author:"Sheikh Hamza Al Hassan", date:"2025-05-10", status:"published", excerpt:"Every Muslim carries the responsibility of conveying the message of Islam with wisdom and beautiful manner...", content:"Allah ﷻ commands us in the Quran:\n\n[ARABIC]ادْعُ إِلَىٰ سَبِيلِ رَبِّكَ بِالْحِكْمَةِ وَالْمَوْعِظَةِ الْحَسَنَةِ[/ARABIC]\n\n'Invite to the way of your Lord with wisdom and good instruction...' (An-Nahl 16:125)\n\nDa'wah is not the exclusive domain of scholars and sheikhs. Every Muslim who has knowledge of even one verse or one hadith has the responsibility to convey it.\n\nThe Prophet ﷺ said: 'Convey from me, even if it is one verse.' (Bukhari 3461)\n\nPrinciples of effective Da'wah:\n• Wisdom (Hikmah) — speaking with knowledge and appropriate timing\n• Beautiful advice (Maw'idhah Hasanah) — sincerity and gentleness\n• Arguing in the best manner — respectful dialogue\n• Living by example — being the best representation of Islam\n\nMay Allah make us all ambassadors of His message. Ameen.", likes:29, icon:"🌍", color:"#1a6b4a" },
+    { id:6, title:"Zakat — Purifying Your Wealth", cat:"Fiqh", author:"Sheikh Hamza Al Hassan", date:"2025-05-05", status:"draft", excerpt:"Zakat is one of the five pillars of Islam and a fundamental right of the poor upon the wealth of the rich...", content:"Zakat, meaning 'purification' in Arabic, is the obligatory charity that every eligible Muslim must pay annually.\n\nThe nisab (minimum threshold) for Zakat on gold is 87.48 grams, and for silver it is 612.36 grams. A Muslim who possesses wealth at or above this threshold for one lunar year must pay 2.5% in Zakat.\n\n[ARABIC]وَأَقِيمُوا الصَّلَاةَ وَآتُوا الزَّكَاةَ[/ARABIC]\n\n'Establish prayer and give Zakat...' (Al-Baqarah 2:43)\n\nZakat recipients are specifically defined in the Quran (At-Tawbah 9:60) and include the poor, the destitute, those in debt, travellers in need, and those working to collect and distribute Zakat.", likes:18, icon:"💰", color:"#8a6d1f" }
+  ],
+  hadiths: [
+    { id:1, arabic:"إِنَّمَا الأَعْمَالُ بِالنِّيَّاتِ", translation:"Verily, actions are judged by intentions, and every person will have what they intended.", source:"Sahih Bukhari 1", narrator:"Umar ibn al-Khattab (RA)" },
+    { id:2, arabic:"الْمُسْلِمُ مَنْ سَلِمَ الْمُسْلِمُونَ مِنْ لِسَانِهِ وَيَدِهِ", translation:"A Muslim is one from whose tongue and hand other Muslims are safe.", source:"Sahih Bukhari 10", narrator:"Abdullah ibn Amr (RA)" },
+    { id:3, arabic:"لاَ يُؤْمِنُ أَحَدُكُمْ حَتَّى يُحِبَّ لِأَخِيهِ مَا يُحِبُّ لِنَفْسِهِ", translation:"None of you truly believes until he loves for his brother what he loves for himself.", source:"Sahih Bukhari 13, Muslim 45", narrator:"Anas ibn Malik (RA)" },
+    { id:4, arabic:"الدُّنْيَا سِجْنُ الْمُؤْمِنِ وَجَنَّةُ الْكَافِرِ", translation:"This world is a prison for the believer and a paradise for the disbeliever.", source:"Sahih Muslim 2956", narrator:"Abu Hurairah (RA)" },
+    { id:5, arabic:"خَيْرُكُمْ مَنْ تَعَلَّمَ الْقُرْآنَ وَعَلَّمَهُ", translation:"The best among you are those who learn the Quran and teach it.", source:"Sahih Bukhari 5027", narrator:"Uthman ibn Affan (RA)" },
+    { id:6, arabic:"اتَّقِ اللَّهَ حَيْثُمَا كُنْتَ", translation:"Fear Allah wherever you may be, and follow a bad deed with a good one to erase it, and treat people with good character.", source:"Tirmidhi 1987", narrator:"Muadh ibn Jabal (RA)" }
+  ],
+  users: [
+    { id:1, name:"Sheikh Hamza Al Hassan", email:"hamzahasanadnan@gmail.com", role:"admin", joined:"2024-01-01" },
+    { id:2, name:"Ahmad Rahman", email:"ahmad@example.com", role:"writer", joined:"2025-03-12" },
+    { id:3, name:"Fatima Begum", email:"fatima@example.com", role:"reader", joined:"2025-04-20" },
+    { id:4, name:"Abdullah Khan", email:"abdullah@example.com", role:"writer", joined:"2025-05-01" }
+  ],
+  messages: [
+    { id:1, name:"Mohammad Ali", email:"m.ali@example.com", subject:"Da'wah Inquiry", msg:"Assalamu Alaikum. I would like to know more about your Da'wah programs.", date:"2025-06-02", read:false },
+    { id:2, name:"Sarah Islam", email:"sarah@example.com", subject:"Hadith Question", msg:"Can you clarify a hadith I read?", date:"2025-06-01", read:true }
+  ],
+  donations: [
+    { id:1, name:"Anonymous", amount:"৳500", method:"Bkash", date:"2025-06-01", status:"completed" },
+    { id:2, name:"Ahmad Rahman", amount:"৳1000", method:"Bkash", date:"2025-05-28", status:"completed" }
+  ],
+  currentUser: null,
+  selectedRole: 'user'
+};
+
+// ===== LOADER =====
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    const loader = document.getElementById('loader');
+    loader.style.opacity = '0';
+    setTimeout(() => { loader.style.display = 'none'; animateStats(); }, 600);
+  }, 2200);
+  renderBlogs();
+  renderHadiths();
+});
+
+// ===== STATS ANIMATION =====
+function animateStats() {
+  const targets = { sBlogs: store.blogs.filter(b=>b.status==='published').length, sHadiths: store.hadiths.length, sUsers: store.users.length };
+  Object.entries(targets).forEach(([id, target]) => {
+    let start = 0;
+    const el = document.getElementById(id);
+    const interval = setInterval(() => {
+      start++;
+      el.textContent = start;
+      if (start >= target) clearInterval(interval);
+    }, 80);
+  });
+}
+
+// ===== RENDER BLOGS =====
+function renderBlogs(filter='all', query='') {
+  const grid = document.getElementById('blogGrid');
+  let data = store.blogs.filter(b => b.status === 'published');
+  if (filter !== 'all') data = data.filter(b => b.cat === filter);
+  if (query) data = data.filter(b => b.title.toLowerCase().includes(query) || b.excerpt.toLowerCase().includes(query));
+  if (!data.length) { grid.innerHTML = '<p style="text-align:center;color:var(--text-light);grid-column:1/-1;padding:40px">No posts found.</p>'; return; }
+  grid.innerHTML = data.map(b => `
+    <div class="blog-card" onclick="openBlog(${b.id})">
+      <div class="blog-thumb" style="background:linear-gradient(135deg,${b.color}cc,#0d1f17);">
+        <div class="blog-cat">${b.cat}</div>
+        <span style="font-size:3.5rem;z-index:1;position:relative">${b.icon}</span>
+      </div>
+      <div class="blog-body">
+        <div class="blog-meta">
+          <span><i class="fas fa-user"></i>${b.author}</span>
+          <span><i class="fas fa-calendar"></i>${b.date}</span>
+        </div>
+        <h3 class="blog-title">${b.title}</h3>
+        <p class="blog-excerpt">${b.excerpt}</p>
+        <div class="blog-footer">
+          <a class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+          <span class="blog-likes" onclick="event.stopPropagation();likeBlog(${b.id},this)"><i class="fas fa-heart"></i> ${b.likes}</span>
+        </div>
+      </div>
+    </div>`).join('');
+}
+
+function filterBlog(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  if (btn) btn.classList.add('active');
+  renderBlogs(cat, document.getElementById('blogSearch').value);
+}
+
+function searchBlog(q) {
+  const activeFilter = document.querySelector('.filter-btn.active');
+  const cat = activeFilter ? activeFilter.textContent.trim() : 'all';
+  renderBlogs(cat === 'All' ? 'all' : cat, q.toLowerCase());
+}
+
+function openBlog(id) {
+  const b = store.blogs.find(x => x.id === id);
+  if (!b) return;
+  document.getElementById('modalBlogTitle').textContent = b.title;
+  document.getElementById('modalBlogMeta').innerHTML = `<i class="fas fa-user" style="color:var(--gold);margin-right:4px"></i>${b.author} &nbsp;·&nbsp; <i class="fas fa-calendar" style="color:var(--gold);margin-right:4px"></i>${b.date} &nbsp;·&nbsp; <span style="background:rgba(26,107,74,0.1);color:var(--emerald);padding:2px 10px;border-radius:20px;font-weight:700">${b.cat}</span>`;
+  let content = b.content
+    .replace(/\[ARABIC\](.*?)\[\/ARABIC\]/gs, '<div style="font-family:\'Scheherazade New\',serif;font-size:1.5rem;direction:rtl;text-align:right;color:var(--emerald-dark);margin:16px 0;line-height:2.2">$1</div>')
+    .replace(/\[HADITH\](.*?)\[\/HADITH\]/gs, '<blockquote style="border-left:3px solid var(--gold);padding:12px 20px;background:var(--cream);margin:16px 0;border-radius:0 8px 8px 0;font-style:italic">$1</blockquote>')
+    .replace(/\[B\](.*?)\[\/B\]/gs, '<strong>$1</strong>')
+    .replace(/\[I\](.*?)\[\/I\]/gs, '<em>$1</em>')
+    .replace(/\n---\n/g, '<hr style="border:none;border-top:1px solid rgba(0,0,0,0.08);margin:20px 0">')
+    .replace(/\n/g, '<br>');
+  document.getElementById('modalBlogContent').innerHTML = content;
+  openModal('blogModal');
+}
+
+function likeBlog(id, el) {
+  const b = store.blogs.find(x => x.id === id);
+  if (b) { b.likes++; el.innerHTML = `<i class="fas fa-heart" style="color:#e74c3c"></i> ${b.likes}`; }
+}
+
+// ===== RENDER HADITHS =====
+function renderHadiths() {
+  const grid = document.getElementById('hadithGrid');
+  grid.innerHTML = store.hadiths.map((h,i) => `
+    <div class="hadith-card" onclick="openHadith(${h.id})">
+      <div class="hadith-num">Hadith ${String(i+1).padStart(2,'0')}</div>
+      <div class="hadith-arabic-text">${h.arabic}</div>
+      <div class="hadith-translation">"${h.translation}"</div>
+      <div class="hadith-source">
+        <i class="fas fa-book" style="margin-right:4px"></i>${h.source}
+        <i class="fas fa-share-alt hadith-share" onclick="event.stopPropagation();copyText('${h.arabic} - ${h.translation} (${h.source})','Hadith')"></i>
+      </div>
+    </div>`).join('');
+}
+
+function openHadith(id) {
+  const h = store.hadiths.find(x => x.id === id);
+  if (!h) return;
+  document.getElementById('hadithModalBody').innerHTML = `
+    <div class="hadith-arabic-text" style="color:var(--emerald-dark);font-size:1.8rem">${h.arabic}</div>
+    <div class="hadith-translation" style="color:var(--text-light);font-size:1rem;margin-bottom:20px">"${h.translation}"</div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap">
+      <div style="background:var(--cream);padding:12px 18px;border-radius:10px;flex:1"><strong style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light)">Source</strong><span style="color:var(--emerald);font-weight:700">${h.source}</span></div>
+      <div style="background:var(--cream);padding:12px 18px;border-radius:10px;flex:1"><strong style="display:block;font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;color:var(--text-light)">Narrator</strong><span style="color:var(--text);font-weight:700">${h.narrator}</span></div>
+    </div>
+    <div style="margin-top:20px;display:flex;gap:10px">
+      <button onclick="copyText('${h.arabic} - ${h.translation} (${h.source})','Hadith')" class="btn btn-gold" style="padding:10px 20px;font-size:0.82rem"><i class="fas fa-copy" style="margin-right:6px"></i>Copy Hadith</button>
+    </div>`;
+  openModal('hadithModal');
+}
+
+// ===== MODAL UTILS =====
+function openModal(id) { document.getElementById(id).classList.add('open'); document.body.style.overflow = 'hidden'; }
+function closeModal(id) { document.getElementById(id).classList.remove('open'); document.body.style.overflow = ''; }
+document.querySelectorAll('.modal-overlay').forEach(m => m.addEventListener('click', e => { if(e.target===m) closeModal(m.id); }));
+document.getElementById('writeModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal('writeModal'); });
+document.getElementById('authModal').addEventListener('click', e => { if(e.target===e.currentTarget) closeModal('authModal'); });
+
+// ===== AUTH =====
+function openAuthModal(tab='login') { openModal('authModal'); switchTab(tab); }
+function switchTab(tab) {
+  document.getElementById('loginForm').style.display = tab==='login' ? 'block' : 'none';
+  document.getElementById('registerForm').style.display = tab==='register' ? 'block' : 'none';
+  document.getElementById('tabLogin').classList.toggle('active', tab==='login');
+  document.getElementById('tabReg').classList.toggle('active', tab==='register');
+}
+function selectRole(role) {
+  store.selectedRole = role;
+  document.getElementById('roleUser').classList.toggle('active', role==='user');
+  document.getElementById('roleWriter').classList.toggle('active', role==='writer');
+}
+function doLogin() {
+  const email = document.getElementById('loginEmail').value.trim();
+  const pass = document.getElementById('loginPass').value;
+  if (!email || !pass) { showNotif('Please fill all fields','error'); return; }
+  // Admin check
+  if (email === 'hamzahasanadnan@gmail.com' || email === '01317770255' || email.toLowerCase().includes('hamza')) {
+    store.currentUser = store.users[0];
+    closeModal('authModal');
+    showNotif('Welcome back, Sheikh Hamza! (Admin)', 'success');
+    updateNavForUser();
+    return;
+  }
+  const user = store.users.find(u => u.email === email);
+  if (user) {
+    store.currentUser = user;
+    closeModal('authModal');
+    showNotif(`Welcome back, ${user.name}!`, 'success');
+    updateNavForUser();
+  } else {
+    showNotif('Account not found. Please register.', 'error');
+  }
+}
+function doRegister() {
+  const name = document.getElementById('regName').value.trim();
+  const email = document.getElementById('regEmail').value.trim();
+  const phone = document.getElementById('regPhone').value.trim();
+  const pass = document.getElementById('regPass').value;
+  if (!name || !email || !pass) { showNotif('Please fill all required fields','error'); return; }
+  const existing = store.users.find(u => u.email === email);
+  if (existing) { showNotif('Email already registered!','warning'); return; }
+  const newUser = { id: store.users.length+1, name, email, phone, role: store.selectedRole, joined: new Date().toISOString().split('T')[0] };
+  store.users.push(newUser);
+  store.currentUser = newUser;
+  closeModal('authModal');
+  showNotif(`Welcome, ${name}! Your account has been created.`, 'success');
+  updateNavForUser();
+}
+function updateNavForUser() {
+  if (!store.currentUser) return;
+  const actions = document.querySelector('.nav-actions');
+  const isAdmin = store.currentUser.role === 'admin';
+  actions.innerHTML = `
+    <span style="color:var(--gold);font-size:0.82rem;font-weight:600"><i class="fas fa-user-circle" style="margin-right:5px"></i>${store.currentUser.name.split(' ')[0]}</span>
+    ${isAdmin ? `<button class="btn btn-gold" onclick="openAdmin()"><i class="fas fa-user-shield"></i> Admin</button>` : ''}
+    <button class="btn btn-outline" onclick="writePost()"><i class="fas fa-pen"></i> Write</button>
+    <button class="btn" style="background:rgba(239,68,68,0.15);color:#f87171;border:1px solid rgba(239,68,68,0.2)" onclick="logout()"><i class="fas fa-sign-out-alt"></i></button>
+  `;
+}
+function logout() {
+  store.currentUser = null;
+  location.reload();
+}
+function writePost() { openWriteModal(); }
+
+// ===== WRITE BLOG =====
+function openWriteModal() { openModal('writeModal'); }
+function insertText(before, after) {
+  const ta = document.getElementById('wContent');
+  const start = ta.selectionStart, end = ta.selectionEnd;
+  const sel = ta.value.substring(start, end);
+  ta.value = ta.value.substring(0,start) + before + sel + after + ta.value.substring(end);
+  ta.focus();
+}
+function publishPost() {
+  const title = document.getElementById('wTitle').value.trim();
+  const content = document.getElementById('wContent').value.trim();
+  const cat = document.getElementById('wCat').value;
+  const author = document.getElementById('wAuthor').value.trim() || (store.currentUser ? store.currentUser.name : 'Guest');
+  const excerpt = document.getElementById('wExcerpt').value.trim();
+  if (!title || !content) { showNotif('Title and content are required!','error'); return; }
+  const icons = {'Hadith':'📖','Fiqh':'⚖️','Seerah':'☀️','Aqeedah':'🌙',"Da'wah":'🌍'};
+  const colors = {'Hadith':'#1a6b4a','Fiqh':'#8a6d1f','Seerah':'#c9a84c','Aqeedah':'#1a6b4a',"Da'wah":'#0e4230'};
+  const post = { id: Date.now(), title, cat, author, date: new Date().toISOString().split('T')[0], status:'published', excerpt: excerpt || content.slice(0,120)+'...', content, likes:0, icon: icons[cat]||'📝', color: colors[cat]||'#1a6b4a' };
+  store.blogs.unshift(post);
+  closeModal('writeModal');
+  ['wTitle','wContent','wAuthor','wExcerpt'].forEach(id => document.getElementById(id).value = '');
+  renderBlogs();
+  showNotif('Your post has been published! JazakAllah Khayr.', 'success');
+}
+function saveDraft() {
+  const title = document.getElementById('wTitle').value.trim();
+  if (!title) { showNotif('Please add a title first.','warning'); return; }
+  showNotif('Draft saved successfully!','success');
+  closeModal('writeModal');
+}
+
+// ===== DONATE =====
+function selectAmount(btn, amount) {
+  document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  if (amount !== 'other') document.getElementById('donateAmount').value = amount;
+  else document.getElementById('donateAmount').focus();
+}
+function processDonate() {
+  const amount = document.getElementById('donateAmount').value;
+  const phone = document.getElementById('donatePhone').value;
+  if (!amount || amount < 1) { showNotif('Please enter a valid amount','error'); return; }
+  copyText('01317770255', 'Bkash number');
+  showNotif(`Please send ৳${amount} to Bkash: 01317770255 (Sheikh Hamza Al Hassan). Number copied!`, 'success');
+}
+
+// ===== CONTACT =====
+function sendMessage() {
+  const name = document.getElementById('cfName').value.trim();
+  const email = document.getElementById('cfEmail').value.trim();
+  const msg = document.getElementById('cfMsg').value.trim();
+  if (!name || !email || !msg) { showNotif('Please fill all required fields','error'); return; }
+  const sub = document.getElementById('cfSubject').value || 'General';
+  store.messages.push({ id: Date.now(), name, email, subject: sub, msg, date: new Date().toISOString().split('T')[0], read: false });
+  ['cfName','cfLast','cfEmail','cfPhone','cfMsg'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('cfSubject').selectedIndex = 0;
+  showNotif('Your message has been sent! Jazakum Allahu Khairan.', 'success');
+}
+
+// ===== NEWSLETTER =====
+function subscribe() {
+  const email = document.getElementById('nlEmail').value.trim();
+  if (!email || !email.includes('@')) { showNotif('Please enter a valid email address','error'); return; }
+  document.getElementById('nlEmail').value = '';
+  showNotif('Subscribed successfully! JazakAllah Khayr.', 'success');
+}
+
+// ===== ADMIN =====
+function openAdmin() {
+  document.getElementById('adminPanel').classList.add('open');
+  renderAdminTab('dashboard');
+}
+function closeAdmin() { document.getElementById('adminPanel').classList.remove('open'); }
+function adminTab(tab, el) {
+  document.querySelectorAll('.admin-nav-item').forEach(x => x.classList.remove('active'));
+  el.classList.add('active');
+  document.getElementById('adminTabTitle').textContent = el.textContent.trim();
+  renderAdminTab(tab);
+}
+function renderAdminTab(tab) {
+  const c = document.getElementById('adminContent');
+  const published = store.blogs.filter(b=>b.status==='published').length;
+  const drafts = store.blogs.filter(b=>b.status==='draft').length;
+  const unread = store.messages.filter(m=>!m.read).length;
+  if (tab === 'dashboard') {
+    c.innerHTML = `
+      <div class="admin-stats">
+        <div class="astat"><span class="num">${published}</span><span class="lbl">Published Posts</span><div class="trend up"><i class="fas fa-arrow-up"></i> Active</div></div>
+        <div class="astat"><span class="num">${store.hadiths.length}</span><span class="lbl">Hadiths</span><div class="trend up"><i class="fas fa-arrow-up"></i> Online</div></div>
+        <div class="astat"><span class="num">${store.users.length}</span><span class="lbl">Users</span><div class="trend up"><i class="fas fa-arrow-up"></i> Members</div></div>
+        <div class="astat"><span class="num">${unread}</span><span class="lbl">Unread Messages</span><div class="trend ${unread>0?'up':'down'}">${unread>0?'⚠️ Pending':'✓ Clear'}</div></div>
+      </div>
+      <div class="admin-section">
+        <h3>Recent Blog Posts <button class="admin-btn primary" onclick="openWriteModal()">+ New Post</button></h3>
+        <table class="admin-table">
+          <thead><tr><th>Title</th><th>Category</th><th>Author</th><th>Status</th><th>Actions</th></tr></thead>
+          <tbody>${store.blogs.slice(0,5).map(b=>`<tr><td>${b.title.substring(0,40)}...</td><td>${b.cat}</td><td>${b.author.split(' ')[0]}</td><td><span class="abadge ${b.status}">${b.status}</span></td><td><button class="admin-btn edit" onclick="openBlog(${b.id});closeAdmin()">View</button> <button class="admin-btn delete" onclick="deletePost(${b.id})">Delete</button></td></tr>`).join('')}</tbody>
+        </table>
+      </div>
+      <div class="admin-section">
+        <h3>Recent Messages</h3>
+        <table class="admin-table">
+          <thead><tr><th>Name</th><th>Subject</th><th>Date</th><th>Status</th></tr></thead>
+          <tbody>${store.messages.map(m=>`<tr><td>${m.name}</td><td>${m.subject}</td><td>${m.date}</td><td><span class="abadge ${m.read?'published':'pending'}">${m.read?'Read':'Unread'}</span></td></tr>`).join('')}</tbody>
+        </table>
+      </div>`;
+  } else if (tab === 'posts') {
+    c.innerHTML = `<div class="admin-section"><h3>All Blog Posts <button class="admin-btn primary" onclick="openWriteModal()">+ New Post</button></h3>
+      <table class="admin-table">
+        <thead><tr><th>ID</th><th>Title</th><th>Category</th><th>Date</th><th>Likes</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody>${store.blogs.map(b=>`<tr><td>#${b.id}</td><td>${b.title.substring(0,35)}...</td><td>${b.cat}</td><td>${b.date}</td><td>${b.likes}</td><td><span class="abadge ${b.status}">${b.status}</span></td><td><button class="admin-btn edit" onclick="openBlog(${b.id});closeAdmin()">View</button> <button class="admin-btn delete" onclick="deletePost(${b.id})">Del</button></td></tr>`).join('')}</tbody>
+      </table></div>`;
+  } else if (tab === 'hadiths') {
+    c.innerHTML = `<div class="admin-section"><h3>Hadiths Collection <button class="admin-btn primary" onclick="addHadithAdmin()">+ Add Hadith</button></h3>
+      <table class="admin-table">
+        <thead><tr><th>#</th><th>Arabic</th><th>Translation</th><th>Source</th><th>Narrator</th></tr></thead>
+        <tbody>${store.hadiths.map((h,i)=>`<tr><td>${i+1}</td><td style="font-family:'Scheherazade New',serif;direction:rtl">${h.arabic}</td><td>${h.translation.substring(0,50)}...</td><td>${h.source}</td><td>${h.narrator}</td></tr>`).join('')}</tbody>
+      </table></div>`;
+  } else if (tab === 'users') {
+    c.innerHTML = `<div class="admin-section"><h3>Registered Users</h3>
+      <table class="admin-table">
+        <thead><tr><th>ID</th><th>Name</th><th>Email</th><th>Role</th><th>Joined</th></tr></thead>
+        <tbody>${store.users.map(u=>`<tr><td>#${u.id}</td><td>${u.name}</td><td>${u.email}</td><td><span class="abadge ${u.role==='admin'?'published':u.role==='writer'?'pending':'draft'}">${u.role}</span></td><td>${u.joined}</td></tr>`).join('')}</tbody>
+      </table></div>`;
+  } else if (tab === 'messages') {
+    c.innerHTML = `<div class="admin-section"><h3>Contact Messages</h3>
+      <table class="admin-table">
+        <thead><tr><th>Name</th><th>Email</th><th>Subject</th><th>Message</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>${store.messages.map(m=>`<tr><td>${m.name}</td><td>${m.email}</td><td>${m.subject}</td><td>${m.msg.substring(0,50)}...</td><td>${m.date}</td><td><span class="abadge ${m.read?'published':'pending'}">${m.read?'Read':'Unread'}</span></td></tr>`).join('')}</tbody>
+      </table></div>`;
+  } else if (tab === 'donations') {
+    c.innerHTML = `<div class="admin-section"><h3>Donations</h3>
+      <table class="admin-table">
+        <thead><tr><th>ID</th><th>Donor</th><th>Amount</th><th>Method</th><th>Date</th><th>Status</th></tr></thead>
+        <tbody>${store.donations.map(d=>`<tr><td>#${d.id}</td><td>${d.name}</td><td>${d.amount}</td><td>${d.method}</td><td>${d.date}</td><td><span class="abadge published">${d.status}</span></td></tr>`).join('')}</tbody>
+      </table></div>
+      <div class="admin-section">
+        <h3>Bkash Number</h3>
+        <div style="color:white;font-size:1.1rem;margin-bottom:8px">01317770255 (Sheikh Hamza Al Hassan)</div>
+        <button class="admin-btn primary" onclick="copyText('01317770255','Bkash number')">Copy Number</button>
+      </div>`;
+  } else if (tab === 'settings') {
+    c.innerHTML = `<div class="admin-section"><h3>Sheikh Profile Settings</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+        <div><label style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Sheikh Name</label><input value="Sheikh Hamza Al Hassan" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:white;font-family:Lato,sans-serif"></div>
+        <div><label style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Email</label><input value="hamzahasanadnan@gmail.com" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:white;font-family:Lato,sans-serif"></div>
+        <div><label style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Phone/Bkash</label><input value="01317770255" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:white;font-family:Lato,sans-serif"></div>
+        <div><label style="color:rgba(255,255,255,0.5);font-size:0.75rem;text-transform:uppercase;letter-spacing:1px;display:block;margin-bottom:6px">Location</label><input value="Dhaka & Sirajganj, Bangladesh" style="width:100%;padding:10px 14px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:8px;color:white;font-family:Lato,sans-serif"></div>
+      </div>
+      <button class="admin-btn primary" onclick="showNotif('Settings saved!','success')" style="padding:10px 24px">Save Settings</button>
+    </div>`;
+  }
+}
+function deletePost(id) {
+  if (!confirm('Are you sure you want to delete this post?')) return;
+  store.blogs = store.blogs.filter(b => b.id !== id);
+  renderAdminTab('posts');
+  renderBlogs();
+  showNotif('Post deleted.', 'warning');
+}
+function addHadithAdmin() { showNotif('Hadith editor coming soon!', 'warning'); }
+
+// ===== UTILS =====
+function copyText(text, label) {
+  navigator.clipboard.writeText(text).then(() => showNotif(`${label} copied: ${text}`, 'success')).catch(() => showNotif('Copy failed', 'error'));
+}
+function showNotif(msg, type='success') {
+  const icons = { success:'fa-check-circle', error:'fa-times-circle', warning:'fa-exclamation-circle' };
+  const n = document.getElementById('notifications');
+  const div = document.createElement('div');
+  div.className = `notif ${type}`;
+  div.innerHTML = `<i class="fas ${icons[type]}"></i><p>${msg}</p>`;
+  n.appendChild(div);
+  setTimeout(() => { div.style.opacity = '0'; div.style.transform = 'translateX(100px)'; setTimeout(() => div.remove(), 300); }, 4000);
+}
+function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
+function toggleMobileNav() { document.getElementById('mobileNav').classList.toggle('open'); }
+
+// ===== ACTIVE NAV ON SCROLL =====
+window.addEventListener('scroll', () => {
+  const sections = ['home','about','blog','hadiths','donate','contact'];
+  let current = 'home';
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el && window.scrollY >= el.offsetTop - 200) current = id;
+  });
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === `#${current}`);
+  });
+});
+</script>
+</body>
+</html>
